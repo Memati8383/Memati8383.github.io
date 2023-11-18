@@ -1,0 +1,1058 @@
+/* Genel stiller */
+
+body {
+    background-color: #111;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+/* Header */
+
+header {
+    background-color: #222;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.logo a,
+.nav-links a {
+    color: #fff;
+}
+
+.nav-links a:hover {
+    color: #00ccaa;
+}
+
+
+/* Notification */
+
+.custom-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* background-image: url('path/to/background-image.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10px;
+    border-radius: 5px;
+    color: #00ffcc;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+
+/* Navigation */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    color: inherit;
+}
+
+nav .nav-links a:hover {
+    color: #ffffff;
+}
+
+
+/* Internet Speed Test Section */
+
+section#internet-speed-test {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.project-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.project-container h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.project-container img {
+    max-width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px 0;
+    color: #ddd;
+}
+
+
+/* Footer */
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+/* Saat */
+
+.zaman-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    color: #00ffcc;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Contact Section */
+
+#contact {
+    background-color: #333;
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    background-color: #333;
+}
+
+.contact-form {
+    background-color: #444;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 40px;
+    width: 400px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: #333;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background-color: #66c2ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #3385ff;
+}
+
+.contact-form button {
+    background-color: #000;
+    color: rgb(255, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.contact-form button:before {
+    content: "";
+    background-color: rgb(255, 0, 0);
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 200%;
+    opacity: 0.8;
+    filter: blur(20px);
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.contact-form button:hover:before {
+    opacity: 1;
+    filter: blur(15px);
+}
+
+.contact-form button span {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-info {
+    background-color: #444;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 40px;
+    width: 400px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin-bottom: 10px;
+}
+
+.contact-list i {
+    margin-right: 10px;
+}
+
+
+/* Email Button */
+
+button {
+    width: 165px;
+    height: 62px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 1rem;
+    border: none;
+    position: relative;
+    background: #100720;
+    transition: 0.1s;
+}
+
+button::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(255, 94, 247, 1) 17.8%, rgba(2, 245, 255, 1) 100.2%);
+    filter: blur(15px);
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+button:active {
+    transform: scale(0.9) rotate(3deg);
+    background: radial-gradient(circle farthest-corner at 10% 20%, rgba(255, 94, 247, 1) 17.8%, rgba(2, 245, 255, 1) 100.2%);
+    transition: 0.5%;
+}
+
+
+/* Animated Word */
+
+.animated-word {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.letter {
+    transition: 0.4s;
+    transform: translateX(0);
+    cursor: grab;
+    color: #fff;
+    background: #333;
+}
+
+.letter:hover {
+    transform: translateY(-1rem);
+    background: -webkit-linear-gradient(120deg, hsl(19, 90%, 52%), hsl(56, 100%, 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Section Styles */
+
+#internet-speed-test {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Typing Animation */
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: black;
+    }
+}
+
+
+/* List Styles */
+
+li {
+    position: relative;
+    display: block;
+    transition: 0.5s;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+li::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    transition: transform 0.5s;
+    transform: scaleX(0);
+    transform-origin: right;
+    background-color: blueviolet;
+}
+
+li:hover {
+    color: #fff;
+}
+
+li:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+/* Kart Stilleri */
+
+.kart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    /* Kartlar arasındaki boşluğu ayarlayın */
+}
+
+.kart:last-child {
+    margin-right: 20px;
+    /* İstediğiniz boşluk miktarını ayarlayabilirsiniz */
+}
+
+
+/* Kart fotoğrafını ortala ve boyutunu ayarla */
+
+.kart-foto {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    /* Kartın maksimum genişliği */
+    height: auto;
+    /* Otomatik yükseklik */
+    width: auto;
+    flex: 1;
+    max-height: 400px;
+    /* Kartın maksimum yüksekliği */
+}
+
+
+/* Kartların genişliğini ayarla */
+
+.kart {
+    flex: 1;
+    margin-right: 0;
+    /* Aralarındaki boşluğu kaldır */
+    max-width: 400px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 48%;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.kart:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.kart img {
+    max-width: 100%;
+    height: auto;
+}
+
+.kart-ust {
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+    border: 1px solid #444;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+/* Başlık Stilleri */
+
+.morse-title {
+    background-color: #333;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+
+/* Açıklama Stilleri */
+
+.aciklama {
+    padding: 20px;
+    font-size: 18px;
+    /* Metin boyutunu artırdık */
+    line-height: 1.6;
+    /* Satır yüksekliğini artırdık */
+    margin-top: 10px;
+    /* Üst boşluğu ekledik */
+    color: #555;
+    /* Metin rengini değiştirdik */
+}
+
+.aciklama h3 {
+    font-size: 24px;
+    /* Başlık boyutunu artırdık */
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    /* Başlık rengini değiştirdik */
+}
+
+
+/* Input ve Buton Stilleri */
+
+.input-box {
+    margin: 20px;
+}
+
+.input-box label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.kart button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.kart button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Output Kutusu Stilleri */
+
+.output-box {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 20px;
+}
+
+
+/* Buton Stilleri */
+
+.kart button {
+    background-color: #007bff;
+    /* Buton arka plan rengi */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+.kart button:hover {
+    /* Buton hover rengi */
+    transform: scale(1.05);
+    /* Hover'da butonun büyüklüğünü artırma animasyonu */
+}
+
+.kart button:active {
+    transform: scale(0.95);
+    /* Tıklama anında butonun küçülme animasyonu */
+}
+
+.morse-converter {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.morse-converter h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.morse-converter textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.morse-converter button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.morse-converter button:hover {
+    background-color: #0056b3;
+}
+
+#outputText {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.custom-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Arka plan rengi */
+    background-image: url('path/to/background-image.jpg');
+    /* Arka plan resmi yolu */
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10px;
+    border-radius: 5px;
+    color: #00ffcc;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    color: inherit;
+}
+
+nav .nav-links a:hover {
+    color: #ffffff;
+}
+
+section#internet-speed-test {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.project-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.project-container h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.project-container img {
+    max-width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px 0;
+    color: #ddd
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+/*saat*/
+
+.zaman-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    color: #00ffcc;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Contact Section */
+
+#contact {
+    background-color: #333;
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    background-color: #333;
+}
+
+.contact-form {
+    background-color: #444;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 40px;
+    width: 400px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: #333;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background-color: #66c2ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #3385ff;
+}
+
+.contact-form button {
+    background-color: #000;
+    color: rgb(255, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.contact-form button:before {
+    content: "";
+    background-color: rgb(255, 0, 0);
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 200%;
+    opacity: 0.8;
+    filter: blur(20px);
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.contact-form button:hover:before {
+    opacity: 1;
+    filter: blur(15px);
+}
+
+.contact-form button span {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-info {
+    background-color: #444;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 40px;
+    width: 400px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin-bottom: 10px;
+}
+
+.contact-list i {
+    margin-right: 10px;
+}
+
+
+/*email butonu*/
+
+button {
+    width: 165px;
+    height: 62px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 1rem;
+    border: none;
+    position: relative;
+    background: #100720;
+    transition: 0.1s;
+}
+
+button::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(255, 94, 247, 1) 17.8%, rgba(2, 245, 255, 1)100.2%);
+    filter: blur(15px);
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+button:active {
+    transform: scale(0.9) rotate(3deg);
+    background: radial-gradient(circle farthest-corner at 10% 20%, rgba(255, 94, 247, 1) 17.8%, rgba(2, 245, 255, 1)100.2%);
+    transition: 0.5%;
+}
+
+
+/*animated-word*/
+
+
+/* Add these styles to your existing CSS or a separate file */
+
+.animated-word {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Adjust the gap as needed */
+    font-size: 24px;
+    /* Adjust the font size as needed */
+    font-weight: bold;
+    color: #333;
+    /* Change the color as needed */
+}
+
+.letter {
+    transition: 0.4s;
+    transform: translateX(0);
+    cursor: grab;
+    color: #fff;
+    background: #333;
+}
+
+.letter:hover {
+    transform: translateY(-1rem);
+    background: -webkit-linear-gradient(120deg, hsl(19, 90%, 52%), hsl(56, 100%, 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Genel arka plan rengi */
+
+body {
+    background-color: #111;
+}
+
+
+/* Başlık ve menü arka plan rengi */
+
+header {
+    background-color: #222;
+}
+
+
+/* Başlık metni rengi */
+
+.logo a,
+.nav-links a {
+    color: #fff;
+}
+
+
+/* Bağlantı hover rengi */
+
+.nav-links a:hover {
+    color: #00ccaa;
+}
+
+
+/* Ana bölümler arka plan rengi */
+
+#contact {
+    background-color: #222;
+}
+
+
+/* Ana bölüm metni rengi */
+
+h2,
+.contact-form h2,
+.contact-info h2,
+.contact-list i {
+    color: #fff;
+}
+
+
+/* Cursor yanıp sönme animasyonu */
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: white;
+    }
+}
+
+
+/*li için alt çizgi efekti*/
+
+li {
+    position: relative;
+    display: block;
+    transition: 0.5s;
+    cursor: pointer;
+    padding-bottom: 10px;
+    /* Yeterli boşluk bırakmak için */
+}
+
+li::before {
+    /* Değişiklik burada: before seçicisi kullanıyoruz */
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    /* Alt kısmına yerleştiriyoruz */
+    transition: transform 0.5s;
+    transform: scaleX(0);
+    transform-origin: right;
+    /* Değişiklik burada: transform-origin değeri değişiyor */
+    background-color: blueviolet;
+}
+
+li:hover {
+    color: #fff;
+}
+
+li:hover::before {
+    /* Değişiklik burada: before seçicisi kullanıyoruz */
+    transform: scaleX(1);
+    transform-origin: left;
+    /* Değişiklik burada: transform-origin değeri değişiyor */
+}
+
+#internet-speed-test {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}

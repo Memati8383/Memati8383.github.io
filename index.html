@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ferit Akdemir - Login Page</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="row full-height justify-content-center">
+                <div class="col-12 text-center align-self-center py-5">
+                    <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                        <h6 class="mb-0 pb-3">
+                            <span>Log In</span>
+                            <span>Sign Up</span>
+                        </h6>
+                        <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+                        <label for="reg-log"></label>
+                        <div class="card-3d-wrap mx-auto">
+                            <div class="card-3d-wrapper">
+                                <div id="signin" class="card-front">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-4 pb-3">Log In</h4>
+                                            <div class="form-group">
+                                                <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                                                <i class="input-icon uil uil-at"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                                                <i class="input-icon uil uil-lock-alt"></i>
+                                            </div>
+                                            <a href="#" class="btn mt-4" onclick="checkForm('signin')">Submit</a>
+                                            <p class="mb-0 mt-4 text-center"><a href="#signup" class="link">Forgot your password?</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="signup" class="card-back">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-4 pb-3">Sign Up</h4>
+                                            <div class="form-group">
+                                                <input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
+                                                <i class="input-icon uil uil-user"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                                                <i class="input-icon uil uil-at"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                                                <i class="input-icon uil uil-lock-alt"></i>
+                                            </div>
+                                            <a href="#" class="btn mt-4" onclick="checkSignUpForm()">Submit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p id="error-message" class="text-danger"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- partial -->
+
+    <!--zaman-->
+    <div class="zaman-container">
+        <div id="zaman"></div>
+    </div>
+    <!--zaman-->
+
+    <!--bildirim-->
+    <div id="notification" class="notification">
+        <span class="close-button" onclick="closeNotification()">&times;</span>
+        <p id="notification-message"></p>
+    </div>
+
+    <!--bildirim-->
+
+</body>
+<script>
+    function checkForm() {
+        var email = document.getElementById("logemail").value;
+        var password = document.getElementById("logpass").value;
+        var errorMessage = document.getElementById("error-message");
+
+        if (email === "" && password === "") {
+            errorMessage.innerText = "Email ve şifre gereklidir!";
+        } else if (email === "") {
+            errorMessage.innerText = "Email gereklidir!";
+        } else if (password === "") {
+            errorMessage.innerText = "Şifre gereklidir!";
+        } else if (!isValidEmail(email)) {
+            errorMessage.innerText = "Geçerli bir e-posta adresi girin!";
+        } else if (password.length < 6) {
+            errorMessage.innerText = "Şifre en az 6 karakter uzunluğunda olmalıdır!";
+        } else {
+            // Eğer tüm gereklilikler karşılandıysa, burada istediğiniz yönlendirmeyi yapabilirsiniz.
+            window.location.href = 'anasayfa/index.html';
+        }
+    }
+
+    function isValidEmail(email) {
+        // Basit bir e-posta doğrulama kontrolü
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+
+    function checkSignUpForm() {
+        var fullName = document.getElementById("logname").value;
+        var email = document.getElementById("logemail").value;
+        var password = document.getElementById("logpass").value;
+        var errorMessage = document.getElementById("error-message");
+
+        if (fullName === "" && email === "" && password === "") {
+            errorMessage.innerText = "Ad, Email ve Şifre gereklidir!";
+        } else if (fullName === "") {
+            errorMessage.innerText = "Ad gereklidir!";
+        } else if (email === "" && password === "") {
+            errorMessage.innerText = "Email ve Şifre gereklidir!";
+        } else if (email === "") {
+            errorMessage.innerText = "Email gereklidir!";
+        } else if (password === "") {
+            errorMessage.innerText = "Şifre gereklidir!";
+        } else if (!isValidEmail(email)) {
+            errorMessage.innerText = "Geçerli bir e-posta adresi girin!";
+        } else if (password.length < 6) {
+            errorMessage.innerText = "Şifre en az 6 karakter uzunluğunda olmalıdır!";
+        } else if (fullName.length > 50) {
+            errorMessage.innerText = "Ad çok uzun, en fazla 50 karakter olmalıdır.";
+        } else if (!containsNumbers(password)) {
+            errorMessage.innerText = "Şifre en az bir rakam içermelidir.";
+        } else {
+            // Eğer tüm gereklilikler karşılandıysa, burada istediğiniz yönlendirmeyi yapabilirsiniz.
+            window.location.href = 'anasayfa/index.html';
+        }
+    }
+
+    function isValidEmail(email) {
+        // Basit bir e-posta doğrulama kontrolü
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    function containsNumbers(text) {
+        // Metin içinde en az bir rakamın olup olmadığını kontrol eder
+        var numberRegex = /\d/;
+        return numberRegex.test(text);
+    }
+
+
+
+    // Her saniye zamanı güncellemek için zamanlayıcı kullanabilirsiniz
+    setInterval(function() {
+        var yeniZaman = new Date();
+        document.getElementById("zaman").innerHTML = yeniZaman.toLocaleString();
+    }, 1000); // Her 1000 milisaniyede (1 saniye) güncelle
+    //bildirim
+    const messages = [
+        "😃🚀 Kodlama dünyasına adım attınız! Yeni bir dil öğrenmek için sabırsızlanıyorsanız başlayın.",
+        "💻🤝 Bir programcı, sorunları çözmek için klavyeyi en iyi arkadaşı olarak görür.",
+        "📝🧠 Kod yazarken bol bol not almak fikirlerinizi ve mantığınızı net tutmanıza yardımcı olabilir.",
+        "⏳💪 Kodlama öğrenirken sabır ve azim her zaman en büyük yardımcınız olacaktır.",
+        "🔍🕵️ Bir hata bulunup düzeltildiğinde, o hatayı bulan kişi gerçek bir dedektif gibi hisseder!",
+        "🧩📂 Büyük projeleri küçük, yönetilebilir parçalara bölmek her zaman daha etkili bir yaklaşımdır.",
+        "🌐🤔 Stack Overflow, en iyi arkadaşınız olabilir. Başkalarının sorunlarından öğrenmeyi unutmayın!",
+        "🎨🖋️ Kod yazarken kreatif olun! Her satırda kendi imzanızı bırakabilirsiniz.",
+        "🧩🧠 Bir dil öğrenirken sadece sözdizimi değil, problem çözme yeteneğini de geliştirdiğinizi unutmayın.",
+        "🐞🔍 Bir bug bulduğunuzda, önceki çalışan sürüme geri dönün ve neyi değiştirdiğinizi anlamaya çalışın.",
+        "🔄🌟 Yeniliklere ve değişime açık olun. Teknoloji sürekli olarak evriliyor!",
+        "📦🛠️ Kodlamayı öğrenirken projeler oluşturmak, teoriden daha hızlı öğrenmenin harika bir yoludur.",
+        "🎉🙌 Bir kod parçası yazdığınızda ve sorunsuz çalıştığını gördüğünüzde duyduğunuz gurur tarif edilemez.",
+        "🆘📚 Hata yapmaktan korkmayın, çünkü her hata aslında yeni bir öğrenme fırsatıdır.",
+        "📄📖 Kodlama öğrenirken belgelemeyi alışkanlık haline getirirseniz ileride size büyük kolaylık sağlar.",
+        "👓📂 Başkalarının kodlarını okumak, farklı yaklaşımları ve teknikleri öğrenmenizi sağlar. Açık kaynaklı projelere göz atmayı deneyin!"
+    ];
+
+
+    function showNotification(message) {
+        const notificationElement = document.getElementById('notification');
+        const messageElement = document.getElementById('notification-message');
+        messageElement.textContent = message;
+        notificationElement.classList.add('active');
+
+        setTimeout(() => {
+            notificationElement.classList.remove('active');
+            setTimeout(() => {
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                showNotification(randomMessage);
+            }, 500); // Bildirimi gizledikten 0.5 saniye sonra yeni bir bildirim göster
+        }, 10000);
+    }
+
+    // İlk bildirimi başlat
+    const initialRandomMessage = messages[Math.floor(Math.random() * messages.length)];
+    showNotification(initialRandomMessage);
+
+    function closeNotification() {
+        const notificationElement = document.getElementById('notification');
+        notificationElement.classList.remove('active');
+    }
+</script>
+<style>
+    /* Updated Notification Styles */
+    
+    .notification {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: rgba(51, 51, 51, 0.8);
+        /* 0.8 alpha değeriyle hafifçe şeffaf arka plan */
+        color: #00ffcc;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        font-family: 'Roboto', sans-serif;
+        width: 300px;
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.6;
+        z-index: 9999;
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(100%);
+    }
+    
+    .notification.active {
+        transform: translateY(0);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(100%);
+        }
+    }
+    
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        transition: color 0.2s ease-in-out;
+    }
+    
+    .close-button:hover {
+        color: #ff0000;
+    }
+</style>
+
+</html>

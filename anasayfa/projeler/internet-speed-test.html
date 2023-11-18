@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="script.js"></script>
+    <meta property="og:type" content="website" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>İnternet Hızı Testi Uygulaması</title>
+
+
+</head>
+
+<body>
+    <header>
+        <nav class="slow-nav">
+            <div class="logo">
+                <a href="\anasayfa\index.html" class="custom-heading">Emre Göksu</a>
+            </div>
+            <ul class="nav-links">
+                <div class="animated-word">
+                    <!-- <li class="letter">E</li>
+                    <li class="letter">M</li>
+                    <li class="letter">R</li>
+                    <li class="letter">E</li> -->
+                    <li><a href="#internet-speed-test">Internet Speed Test</a></li>
+                    <li><a href="#contact">İletişim</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <section id="internet-speed-test">
+        <div class="project-container">
+            <div class="card">
+                <h2 class="card-title">
+                    <span class="typewriter-text"></span>
+                </h2>
+
+                <div class="image-container">
+                    <img id="image" src="fotolar/internet speed test.png" alt="Fotoğraf 1">
+                    <div id="image-description" class="image-description">
+                        <p>İnternet hızınızı ölçmek ve gerçek zamanlı olarak görüntülemek için tasarlanmış bir web uygulamasıdır. Bu uygulama, kullanıcıların internet hızını ölçmelerine ve günlük internet bağlantılarının performansını izlemelerine yardımcı
+                            olur. İnternet hızınız, indirme ve yükleme hızları şeklinde ayrıntılı bir şekilde gösterilir.
+                        </p>
+                        </p>
+                        <p>
+                            Uygulamayı kullanmak için sadece <button class="cta-button">Check Speed</button> düğmesine tıklamanız yeterlidir. Uygulama, hızlı ve güvenilir sonuçlar sunarak internet bağlantınızın kalitesini anlamanıza yardımcı olur.
+                        </p>
+                        <p>
+                            Hızı Test Et düğmesine tıkladığınızda, uygulama otomatik olarak indirme ve yükleme hızlarınızı ölçmeye başlar. Gerçek zamanlı grafiklerle sonuçları görebilir ve bağlantı kalitenizi değerlendirebilirsiniz.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <div class="zaman-container">
+        <div id="zaman"></div>
+    </div>
+    <div id="custom-notification" class="custom-notification">
+        <i class="fas fa-bell"></i>
+        <p></p>
+    </div>
+
+    <section id="contact">
+        <div class="contact-container">
+            <div class="contact-form">
+                <h2>İletişim</h2>
+                <form action="submit-form.php" method="post">
+                    <input type="text" name="adsoyad" placeholder="Adınız Soyadınız">
+                    <input type="email" name="email" placeholder="E-posta Adresiniz">
+                    <textarea name="mesaj" placeholder="Mesajınız"></textarea>
+                    <button class="cta-button" type="button">Gönder</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h2>İletişim Bilgileri</h2>
+                <ul class="contact-list">
+                    <li><i class="fas fa-envelope"></i> Email: emremsi@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> Telefon: (+90)530-833-80-99</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Adres: Mersin, Türkiye</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="fixed-element social-icons ">
+        <a href="" target="_blank" class="grow-and-hover"><i class="fab fa-facebook-f "></i></a>
+        <a href="" target="_blank" class="grow-and-hover"><i class="fab fa-twitter "></i></a>
+        <a href="https://instagram.com/ferit22901" target="_blank" class="grow-and-hover"><i class="fab fa-instagram "></i></a>
+        <a href="" target="_blank" class="grow-and-hover"><i class="fab fa-linkedin-in "></i></a>
+        <a href="" target="_blank" class="grow-and-hover"><i class="fab fa-youtube "></i></a>
+        <a href="" target="_blank" class="grow-and-hover"><i class="fab fa-pinterest "></i></a>
+        <a href="" target="_blank" class="grow-and-hover"><i class="fab fa-reddit "></i></a>
+        <a href="https://github.com/Memati8383" target="_blank" class="grow-and-hover"><i class="fab fa-github "></i></a>
+        <!-- Daha fazla sosyal medya simgesi ekleyebilirsiniz -->
+    </div>
+    <script>
+        // Fotoğrafın üzerine tıklanıldığında animasyon ekleyin
+        const imageContainer = document.querySelector('.image-container');
+
+        imageContainer.addEventListener('click', function() {
+            const image = this.querySelector('img');
+            image.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                image.style.transform = 'scale(1)';
+            }, 300); // 0.3 saniye sonra normal boyuta geri dönecektir
+        });
+
+        // Fotoğrafın üzerine tıklanıldığında açıklamayı göster/gizle
+        const image = document.getElementById('image');
+        const imageDescription = document.getElementById('image-description');
+
+        image.addEventListener('click', function() {
+            if (imageDescription.style.display === 'none' || imageDescription.style.display === '') {
+                imageDescription.style.display = 'block'; // Açıklama göster
+                imageDescription.classList.add('aciklama'); // Açıklama animasyonunu etkinleştir
+            } else {
+                imageDescription.style.display = 'none'; // Açıklamayı gizle
+                imageDescription.classList.remove('aciklama'); // Açıklama animasyonunu devre dışı bırak
+            }
+        });
+
+
+        // Daktilo etkisi için JavaScript kodu
+        var text = "İnternet Hızı Testi Uygulaması";
+        var typewriter = document.querySelector('.typewriter-text');
+        var speed = 50; // Harf yazma hızı (milisaniye cinsinden)
+        var i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                typewriter.textContent = text.substr(0, i + 1);
+                i++;
+                setTimeout(typeWriter, speed);
+            } else {
+                // Metni tamamen sildikten sonra tekrar başlatın
+                setTimeout(deleteText, 1000); // 1 saniye bekle ve silme işlemine geç
+            }
+        }
+
+        function deleteText() {
+            if (i >= 0) {
+                typewriter.textContent = text.substr(0, i);
+                i--;
+                setTimeout(deleteText, speed);
+            } else {
+                // Metni tamamen sildikten sonra tekrar yazmaya başlayın
+                i = 0;
+                setTimeout(typeWriter, 1000); // 1 saniye bekle ve yazma işlemine geç
+            }
+        }
+
+        // Sayfa yüklendiğinde daktilo etkisini başlat
+        window.onload = typeWriter;
+
+        //Notification
+        const customNotification = document.getElementById('custom-notification');
+        const notificationMessages = [{
+            message: "internet speed test'i Deneyin!",
+            icon: "fa-code"
+        }, {
+            message: "Yeni özellikler ekledik! Kontrol edin.",
+            icon: "fa-puzzle-piece"
+        }, {
+            message: "Bizi takip etmeye devam edin. Teşekkürler!",
+            icon: "fa-heart"
+
+        }, {
+            message: "Internet hızınızı ölçün ve sonuçları paylaşın!",
+            icon: "fa-wifi"
+        }, {
+            message: "Hızlı bir internet deneyimi için ipuçları!",
+            icon: "fa-signal"
+        }, {
+            message: "İnternet hızınızı optimize edin!",
+            icon: "fa-cog"
+        }, {
+            message: "İnternet güvenliğinizi kontrol edin!",
+            icon: "fa-lock"
+        }];
+
+        let currentMessageIndex = 0;
+
+        function showCustomNotification() {
+            const {
+                message,
+                icon
+            } = notificationMessages[currentMessageIndex];
+            customNotification.querySelector('p').textContent = message;
+            customNotification.querySelector('i').className = `fas ${icon}`;
+            customNotification.style.visibility = 'visible';
+            customNotification.style.opacity = '1';
+
+            setTimeout(() => {
+                customNotification.style.visibility = 'hidden';
+                customNotification.style.opacity = '0';
+            }, 5000); // Hide after 5 seconds
+
+            currentMessageIndex = (currentMessageIndex + 1) % notificationMessages.length;
+        }
+
+        // Show custom notification every 10 seconds
+        setInterval(showCustomNotification, 10000);
+
+        function updateZaman() {
+            var yeniZaman = new Date();
+            document.getElementById("zaman").innerHTML = yeniZaman.toLocaleString();
+        }
+
+        // Her saniye zamanı güncellemek için zamanlayıcı kullanabilirsiniz
+        setInterval(updateZaman, 1000); // Her 1000 milisaniyede (1 saniye) güncelle
+        // Add this script to your existing <script> tag or a separate JavaScript file
+    </script>
+    <style>
+        .custom-heading {
+            animation: blink 1s infinite;
+            text-decoration: none;
+            /* blink adlı animasyonu sınıfa uygula */
+        }
+        
+        @keyframes blink {
+            0%,
+            100% {
+                opacity: 1;
+                /* Başlangıç ve bitişte metni görünür yap */
+            }
+            50% {
+                opacity: 0;
+                /* Orta noktada metni görünmez yap */
+            }
+        }
+        /* Animasyon anahtar çerçevesi tanımlama */
+        
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                /* Başlangıçta metni ekranın solundan dışarı kaydır */
+                opacity: 0;
+                /* Başlangıçta metni görünmez yap */
+            }
+            100% {
+                transform: translateX(0);
+                /* Animasyon sonunda metni görünür hale getir ve eski konumuna getir */
+                opacity: 1;
+            }
+        }
+        /* Animasyonu .image-description p etiketine uygula */
+        
+        .image-description p {
+            animation: slideIn 1s forwards;
+            /* "slideIn" animasyonunu 1 saniye boyunca çalıştır ve son durumda bırak */
+        }
+        /* Açıklama metnini gizle */
+        
+        .image-description {
+            display: none;
+        }
+        
+        .card-title {
+            color: #ddd;
+        }
+        
+        .typewriter-text {
+            border-right: .15em solid orange;
+            /* Yazının yazılma animasyonunu oluşturur */
+            white-space: nowrap;
+            /* Yazının boşlukları silinir */
+            margin: 0 auto;
+            /* Yazıyı merkeze hizalar */
+            letter-spacing: .15em;
+            /* Harfler arasındaki boşluk */
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+            /* Animasyonları tanımlar */
+        }
+        /* Daktilo animasyonu */
+        
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        /* Cursor (imleç) yanıp sönen animasyon */
+        
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: orange;
+            }
+        }
+        /* Yükselme animasyonunu tanımlayın */
+        /* Sosyal medya simgeleri için uçarak giriş animasyonunu tanımlayın */
+        
+        @keyframes fly-in-icons {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Sosyal medya simgeleri için büyüme ve hover animasyonunu tanımlayın */
+        
+        @keyframes grow-and-hover {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-5px) scale(1.1);
+            }
+            100% {
+                transform: translateY(0) scale(1);
+            }
+        }
+        /* Sosyal medya simgeleri kutusunu stilini tanımlayın */
+        
+        .social-icons {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            animation: fly-in-icons 0.5s ease forwards;
+        }
+        /* Sosyal medya simgeleri için ortak stil tanımlamaları */
+        
+        .social-icons a {
+            color: purple;
+            margin-right: 10px;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.2s ease, scale 0.2s ease;
+        }
+        /* Sosyal medya simgeleri için hover etkisi tanımlayın */
+        
+        .social-icons a:hover {
+            color: #FFA500;
+            /* Turuncu rengi */
+            transform: translateY(-5px) scale(1.1);
+        }
+        /* Sabit elemanı stilini tanımlayın */
+        
+        .fixed-element {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 999;
+            animation: shake 0.5s ease infinite;
+        }
+        /* Sabit elemanı için shake animasyonunu tanımlayın */
+        
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(5px);
+            }
+            50% {
+                transform: translateX(-5px);
+            }
+            75% {
+                transform: translateX(5px);
+            }
+            100% {
+                transform: translateX(-5px);
+            }
+        }
+    </style>
+</body>
+
+</html>

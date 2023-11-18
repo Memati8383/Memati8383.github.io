@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Login and Signup Page</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            background-color: #000;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5);
+            width: 350px;
+            text-align: center;
+        }
+        
+        .toggle-button {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .toggle-button button {
+            padding: 10px 20px;
+            background-color: #0f0;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .toggle-button button:hover {
+            background-color: #080;
+        }
+        
+        .form {
+            display: none;
+        }
+        
+        .form.active {
+            display: block;
+        }
+        
+        .form h2 {
+            margin-bottom: 20px;
+        }
+        
+        .form .form-group {
+            margin: 15px 0;
+        }
+        
+        .form .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .form .form-group input {
+            width: 100%;
+            padding: 10px;
+            background-color: #000;
+            color: #0f0;
+            border: 1px solid #0f0;
+            border-radius: 5px;
+        }
+        
+        .form .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0f0;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .form .form-group button:hover {
+            background-color: #080;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="toggle-button">
+            <button id="login-button" class="active">Login</button>
+            <button id="signup-button">Signup</button>
+        </div>
+        <div id="login-form" class="form active">
+            <h2>Login</h2>
+            <form>
+                <div class="form-group">
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" name="login-email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" name="login-password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+        <div id="signup-form" class="form">
+            <h2>Signup</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Full Name:</label>
+                    <input type="text" id="signup-name" name="signup-name" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email:</label>
+                    <input type="email" id="signup-email" name="signup-email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password:</label>
+                    <input type="password" id="signup-password" name="signup-password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Signup</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        const loginButton = document.getElementById('login-button');
+        const signupButton = document.getElementById('signup-button');
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+
+        let userData = null; // Kullanıcı bilgilerini saklamak için bir nesne
+
+        signupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Kullanıcı kayıt yaparken bilgileri hafızada sakla
+            userData = {
+                fullName: document.getElementById('signup-name').value,
+                email: document.getElementById('signup-email').value,
+                password: document.getElementById('signup-password').value
+            };
+            // Kayıt başarılı mesajı
+            alert('Signup successful! You can now login with your credentials.');
+        });
+
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const loginEmail = document.getElementById('login-email').value;
+            const loginPassword = document.getElementById('login-password').value;
+
+            if (userData !== null) {
+                if (loginEmail === userData.email && loginPassword === userData.password) {
+                    alert('Login successful!');
+                } else {
+                    alert('Incorrect email or password. Please try again.');
+                }
+            } else {
+                alert('You need to signup first.');
+            }
+        });
+
+        loginButton.addEventListener('click', () => {
+            loginButton.classList.add('active');
+            signupButton.classList.remove('active');
+            loginForm.classList.add('active');
+            signupForm.classList.remove('active');
+        });
+
+        signupButton.addEventListener('click', () => {
+            signupButton.classList.add('active');
+            loginButton.classList.remove('active');
+            signupForm.classList.add('active');
+            loginForm.classList.remove('active');
+        });
+    </script>
+</body>
+
+</html>

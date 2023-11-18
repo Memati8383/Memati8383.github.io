@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login Sayfası</title>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var errorMessage = document.getElementById("error-message");
+
+            if (username === "" && password === "") {
+                errorMessage.innerHTML = "Kullanıcı adı ve şifre alanlarını doldurun.";
+            } else if (username === "") {
+                errorMessage.innerHTML = "Kullanıcı adı alanını doldurun.";
+            } else if (password === "") {
+                errorMessage.innerHTML = "Şifre alanını doldurun.";
+            } else {
+                errorMessage.innerHTML = ""; // Hata mesajını temizle
+                window.location.href = "anasayfa/index.html";
+            }
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Giriş Yap</h2>
+            <form>
+                <div class="input-group">
+                    <input type="text" id="username" name="username" placeholder="Kullanıcı Adı" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="Şifre" required>
+                </div>
+                <div id="error-message" class="error-message"></div>
+                <!-- <button type="button" class="login-button" onclick="validateForm()">Giriş Yap</button> -->
+                <button type="button" class="login-button" onclick="validateFormAndShareLocation()">Giriş Yap</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="zaman-container">
+        <div id="zaman"></div>
+    </div>
+
+    <div id="notification" class="notification">
+        <p id="notification-message"></p>
+    </div>
+</body>
+
+</html>
