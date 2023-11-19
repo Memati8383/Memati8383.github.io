@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+    background: gainsboro;
+    min-height: 100vh;
+}
+
+.container{
+    display: inline-flex;
+}
+
+.container .icon{
+    margin: 0 3em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+
+.container .icon span{
+    position: relative;
+    width: 5em;
+    height: 5em;
+    display: block;
+    background: white;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+    text-align: center;
+    border-radius: 50%;
+    z-index: 2;
+    transition: all .5s;
+}
+
+
+.container .icon:hover span i {
+    color: white;
+}
+.container .icon:hover span{
+    transition: all .5s;
+    transform: scale(0.70);
+}
+
+.container .icon span i{
+    font-size: 2em;
+    line-height: 2.5em;
+}
+
+.container .icon .tooltip{
+    position: absolute;
+    top: 0px;
+    background: white;
+    color: white;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+    font-size: 1.5em;
+    padding: 0.5em 0.8em;
+    border-radius: 47%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4 cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+
+
+.container .icon .tooltip::before{
+    content: '';
+    position: absolute;
+    width: .8em;
+    height: .8em;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+
+}
+
+.container .icon:hover .tooltip{
+    top: -70px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.container .icon:hover span,
+.container .icon:hover .tooltip{
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
+}
+
+.container .facebook:hover span,
+.container .facebook:hover .tooltip,
+.container .facebook:hover .tooltip::before{
+    background: #4267B2;
+}
+
+
+.container .instagram:hover span,
+.container .instagram:hover .tooltip,
+.container .instagram:hover .tooltip::before{
+    background: #bc2a8d;
+}
+
+
+.container .twitter:hover span,
+.container .twitter:hover .tooltip,
+.container .twitter:hover .tooltip::before{
+    background: #00acee;
+}
+
+
+.container .youtube:hover span,
+.container .youtube:hover .tooltip,
+.container .youtube:hover .tooltip::before{
+    background: #FF0000;
+}

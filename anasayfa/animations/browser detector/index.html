@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Detector</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="fotolar/icon2.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <h1> Browser: </h1>
+
+        <div class="logos">
+            <i class="chrome fa-brands fa-chrome"></i>
+            <i class="firefox fa-brands fa-firefox"></i>
+            <i class="opera fa-brands fa-opera"></i>
+            <i class="safari fa-brands fa-safari"></i>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        // sayfdan ayrılınca gösterilen bildirim
+
+        function showNotification(message) {
+            if (Notification.permission === "granted") {
+                new Notification("🔔 Ferit Akdemir", {
+                    body: message,
+                    icon: "fotolar/icon.jpg", // pc bildirim ikonu
+                    badge: "fotolar/icon.jpg", // mobil bildirim ikonu
+                    vibrate: [200, 100, 200], // Titreşim pattern'ı
+                });
+            } else if (Notification.permission !== 'denied') {
+                Notification.requestPermission().then(function(permission) {
+                    if (permission === "granted") {
+                        showNotification(message);
+                    }
+                });
+            }
+        }
+
+        var originalTitle = document.title;
+
+        document.addEventListener("visibilitychange", function() {
+            if (document.visibilityState === 'hidden') {
+                // Sayfa sekmeden ayrılınca bildirim göster
+                showNotification("Sekmeden ayrıldınız. Lütfen geri dönünüz.");
+                document.title = "🔔 Bildirim Var!";
+            } else {
+                document.title = originalTitle;
+                alert("🌟 Geri Döndüğünüz için Teşekkür Ederiz! 🌟");
+            }
+        });
+    </script>
+</body>
+
+</html>

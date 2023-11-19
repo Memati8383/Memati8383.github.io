@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(#2c3036 50%, #65bee7 50%);
+}
+
+.container{
+    display: flex;
+    background: white;
+    padding: 2em;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1em;
+}
+
+
+.container h1{
+    color: #65bee7;
+    font-size: 2em;
+}
+
+
+.container .logos{
+    margin-left: 1em;
+}
+
+.logos i{
+    font-size: 3em;
+    margin:0 .2em ;
+    transition: opacity .4s;
+    opacity: 0.05;
+}
+
+.logos i:last-child{
+    margin-left: 0px;
+}

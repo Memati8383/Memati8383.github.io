@@ -1,0 +1,246 @@
+User body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+body {
+    transition: background-color 0.5s;
+}
+
+
+/* Card Container */
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+/* Card Styles */
+
+.card {
+    width: 300px;
+    height: 400px;
+    margin: 10px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.card-face img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+}
+
+.card .back {
+    transform: rotateY(180deg);
+}
+
+
+/* Toggle Button Styles */
+
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    color: #333;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+/* Dark Mode Toggle Button Styles */
+
+.dark-mode .toggle-btn {
+    background-color: #333;
+    color: #fff;
+}
+
+.toggle-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+
+/* Dark Mode Styles */
+
+.dark-mode {
+    background-color: #000;
+    color: #fff;
+}
+
+
+/* Card Face Styles */
+
+.card-face {
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.5s, color 0.5s;
+    /* Gece modu geçiş efekti */
+}
+
+
+/* Dark Mode Card Face Styles */
+
+.dark-mode .card-face {
+    background-color: #111;
+    color: #fff;
+}
+
+
+/* Card Face Paragraph Styles */
+
+.card-face.back p {
+    font-size: 23px;
+    font-family: 'Açıklama Fontu', sans-serif;
+    /* Özel bir açıklama fontu */
+}
+
+
+/* Project Link Styles */
+
+.project-link {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: red;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+    font-size: 1rem;
+}
+
+.project-link:hover {
+    background: red;
+    color: #050801;
+    box-shadow: 0 0 5px red, 0 0 25px red, 0 0 50px red, 0 0 200px red;
+}
+
+
+/* Project Link Span Animation Styles */
+
+.project-link span {
+    position: absolute;
+    display: block;
+}
+
+.project-link span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, red);
+    animation: animate1 1s linear infinite;
+}
+
+.project-link span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(100deg, transparent, red);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+.project-link span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, red);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+
+.project-link span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, red);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+
+/* Keyframe Animations */
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes animate3 {
+    0% {
+        right: -100%;
+    }
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+    }
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}

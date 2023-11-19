@@ -1,0 +1,87 @@
+<!--All Source Code Are Available On  -->
+<!-- https://grapdroad.blogspot.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glassmorphism Website Design | Grapdroad </title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="fotolar/icon2.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+
+            <div class="logo">
+                <a href="#">Logo</a>
+            </div>
+
+            <ul class="menu">
+
+                <li> <a href="#" class="active">Home</a> </li>
+                <li> <a href="#"> About</a> </li>
+                <li> <a href="#"> Services</a> </li>
+                <li> <a href="#"> Contact Us</a> </li>
+            </ul>
+
+            <div class="button">
+                <input type="button" value="Login">
+                <input type="button" value="Sign Up">
+            </div>
+
+        </div>
+
+        <div class="text_content">
+            <h2>Glassmorphism Website UI</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente velit earum maxime cupiditate ex impedit officia quis in quasi autem! Deleniti, adipisci consectetur. Consequatur quasi natus, ducimus culpa mollitia vitae minima. Assumenda
+                provident fugiat modi non rem alias suscipit aspernatur quas eos officiis dignissimos minus nisi dolores sapiente, minima perferendis.</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="img">
+            <img src="1.png" alt="">
+        </div>
+
+        <p class="copyright">Copyright Ⓒ 2022 Grapdroad. All Right Reserved.</p>
+    </header>
+    <script>
+        // sayfdan ayrılınca gösterilen bildirim
+
+        function showNotification(message) {
+            if (Notification.permission === "granted") {
+                new Notification("🔔 Ferit Akdemir", {
+                    body: message,
+                    icon: "fotolar/icon.jpg", // pc bildirim ikonu
+                    badge: "fotolar/icon.jpg", // mobil bildirim ikonu
+                    vibrate: [200, 100, 200], // Titreşim pattern'ı
+                });
+            } else if (Notification.permission !== 'denied') {
+                Notification.requestPermission().then(function(permission) {
+                    if (permission === "granted") {
+                        showNotification(message);
+                    }
+                });
+            }
+        }
+
+        var originalTitle = document.title;
+
+        document.addEventListener("visibilitychange", function() {
+            if (document.visibilityState === 'hidden') {
+                // Sayfa sekmeden ayrılınca bildirim göster
+                showNotification("Sekmeden ayrıldınız. Lütfen geri dönünüz.");
+                document.title = "🔔 Bildirim Var!";
+            } else {
+                document.title = originalTitle;
+                alert("🌟 Geri Döndüğünüz için Teşekkür Ederiz! 🌟");
+            }
+        });
+    </script>
+</body>
+
+</html>

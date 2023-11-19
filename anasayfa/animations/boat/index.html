@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boat Animation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="fotolar/icon2.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <div class="hero">
+        <div class="ocean">
+            <img src="water.png" alt="sea" class="water">
+            <div class="boat">
+                <img src="ship.png" alt="">
+            </div>
+        </div>
+    </div>
+    <script>
+        // sayfdan ayrılınca gösterilen bildirim
+
+        function showNotification(message) {
+            if (Notification.permission === "granted") {
+                new Notification("🔔 Ferit Akdemir", {
+                    body: message,
+                    icon: "fotolar/icon.jpg", // pc bildirim ikonu
+                    badge: "fotolar/icon.jpg", // mobil bildirim ikonu
+                    vibrate: [200, 100, 200], // Titreşim pattern'ı
+                });
+            } else if (Notification.permission !== 'denied') {
+                Notification.requestPermission().then(function(permission) {
+                    if (permission === "granted") {
+                        showNotification(message);
+                    }
+                });
+            }
+        }
+
+        var originalTitle = document.title;
+
+        document.addEventListener("visibilitychange", function() {
+            if (document.visibilityState === 'hidden') {
+                // Sayfa sekmeden ayrılınca bildirim göster
+                showNotification("Sekmeden ayrıldınız. Lütfen geri dönünüz.");
+                document.title = "🔔 Bildirim Var!";
+            } else {
+                document.title = originalTitle;
+                alert("🌟 Geri Döndüğünüz için Teşekkür Ederiz! 🌟");
+            }
+        });
+    </script>
+</body>
+
+</html>
