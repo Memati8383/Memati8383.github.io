@@ -74,7 +74,7 @@ body {
     position: fixed;
     top: 20px;
     right: 20px;
-    background-color: #fff;
+    background-color: #f0f0f0;
     color: #333;
     padding: 10px 20px;
     border: 1px solid #ccc;
@@ -82,6 +82,12 @@ body {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s, color 0.3s;
+    border: none;
+}
+
+.toggle-btn:hover {
+    background-color: #333;
+    color: #fff;
 }
 
 
@@ -90,11 +96,12 @@ body {
 .dark-mode .toggle-btn {
     background-color: #333;
     color: #fff;
+    border: none;
 }
 
-.toggle-btn:hover {
-    background-color: #333;
-    color: #fff;
+.dark-mode .toggle-btn:hover {
+    background-color: #f0f0f0;
+    color: #333;
 }
 
 
